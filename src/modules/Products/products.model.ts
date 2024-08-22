@@ -24,6 +24,9 @@ const productsSchema = new Schema<IProducts>({
         type: String,
         required: [true, "Product image is required"]
     }
-});
+},
+    {
+        timestamps: true
+    });
 
 export const ProductsModel = model<IProducts>('Products', productsSchema);
