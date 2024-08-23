@@ -5,14 +5,26 @@ import sendResponse from "../../utils/sendResponse"
 import httpStatus from "http-status"
 
 const getAllProductsService = catchAsync(async (req: Request, res: Response) => {
-    const serviceData = await productsServices.getAllProductsFromDB()
+    const productData = await productsServices.getAllProductsFromDB();
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
         success: true,
         message: "Products retrieved successfully",
-        data: serviceData,
+        data: productData,
     })
 })
+const getSingleProductService = catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params
+    const product = await productsServices.getSingleProductsFromDB(id)
+    sendResponse(res, {
+        statusCode: httpStatus.CREATED,
+        success: true,
+        message: "Service retrieved successfully",
+        data: product,
+    })
+
+})
 export const productsController = {
-    getAllProductsService
+    getAllProductsService,
+    getSingleProductService
 }

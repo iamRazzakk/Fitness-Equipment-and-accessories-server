@@ -4,6 +4,10 @@ import { productsRouter } from "../modules/Products/products.routes";
 const router = Router()
 const appRouterModel = [
     {
+        path: '/',
+        routerFile: productsRouter
+    },
+    {
         path: '/products',
         routerFile: productsRouter
     },
