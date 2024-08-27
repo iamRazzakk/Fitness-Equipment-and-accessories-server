@@ -8,6 +8,7 @@ import httpStatus from "http-status"
 // create products
 const createNewProduct = catchAsync(async (req: Request, res: Response) => {
     const result = req.body
+    console.log(result)
     const newProduct = await productsServices.createNewProduct(result)
     sendResponse(res, {
         statusCode: httpStatus.CREATED,

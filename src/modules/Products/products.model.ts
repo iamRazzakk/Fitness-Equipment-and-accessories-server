@@ -20,6 +20,10 @@ const productsSchema = new Schema<IProducts>({
         type: Number,
         required: [true, "Products aviblability is required"]
     },
+    category: {
+        type: String,
+        required: [true, "Category is required"]
+    },
     images: {
         type: String,
         required: [true, "Product image is required"]
